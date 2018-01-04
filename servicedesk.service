@@ -1,0 +1,13 @@
+[Unit]
+Description=Servicedesk
+
+[Service]
+Type=forking
+User=servicedesk
+PIDFile=/home/servicedesk/atlassian-jira-servicedesk-3.9.1-standalone/work/catalina.pid
+ExecStart=/home/servicedesk/atlassian-jira-servicedesk-3.9.1-standalone/bin/start-jira.sh
+ExecStop=/home/servicedesk/atlassian-jira-servicedesk-3.9.1-standalone/bin/stop-jira.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

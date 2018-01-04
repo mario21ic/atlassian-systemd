@@ -1,0 +1,14 @@
+[Unit]                                       
+Description=Jira
+
+[Service]
+Type=forking
+User=jira                                    
+PIDFile=/home/jira/atlassian-jira-software-7.6.1-standalone/work/catalina.pid              
+ExecStart=/home/jira/atlassian-jira-software-7.6.1-standalone/bin/start-jira.sh            
+ExecStop=/home/jira/atlassian-jira-software-7.6.1-standalone/bin/stop-jira.sh
+Restart=always
+
+[Install]                                    
+WantedBy=multi-user.target
+

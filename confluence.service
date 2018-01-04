@@ -1,0 +1,13 @@
+[Unit]
+Description=Confluence
+
+[Service]
+Type=forking
+User=confluence
+PIDFile=/home/confluence/atlassian-confluence-6.6.0/work/catalina.pid
+ExecStart=/home/confluence/atlassian-confluence-6.6.0/bin/start-confluence.sh
+ExecStop=/home/confluence/atlassian-confluence-6.6.0/bin/stop-confluence.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

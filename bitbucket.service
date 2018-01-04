@@ -1,0 +1,15 @@
+[Unit]
+Description=Bitbucket
+
+[Service]
+Type=forking
+User=bitbucket
+Environment=JRE_HOME=/usr/java/jdk1.8.0_131/jre
+Environment=JAVA_BINARY=/usr/java/jdk1.8.0_131/jre/bin/java
+PIDFile=/home/bitbucket/home/log/bitbucket.pid
+ExecStart=/home/bitbucket/atlassian-bitbucket-5.6.1/bin/start-bitbucket.sh
+ExecStop=/home/bitbucket/atlassian-bitbucket-5.6.1/bin/stop-bitbucket.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
